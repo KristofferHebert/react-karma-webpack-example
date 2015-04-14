@@ -6,13 +6,11 @@ var webpack = require('webpack');
  */
 module.exports = {
   entry: {
-    app: './web_modules/app/index',
-    newsletters: './web_modules/newsletter/index',
-    worker: './web_modules/newsletter/worker'
+    app: './web_modules/app'
   },
   output: {
-    publicPath: '/public/js/',
-    path: path.join(__dirname, '/app/public/js/'),
+    publicPath: '/public/',
+    path: path.join(__dirname, '/app/public/'),
     filename: '[name].js'
   },
   module: {
@@ -20,7 +18,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel'
       }
     ]
   },
