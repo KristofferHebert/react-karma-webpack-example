@@ -16,7 +16,7 @@ module.exports = {
 
   entry: {
     app: [
-      'webpack-dev-server/client?http://localhost:9090',
+      'webpack-dev-server/client?//localhost:9090',
       'webpack/hot/only-dev-server',
       './web_modules/index'
     ]
@@ -25,8 +25,8 @@ module.exports = {
   // This will not actually create a bundle.js file in ./build. It is used
   // by the dev server for dynamic hot loading.
   output: {
-    publicPath: 'http://localhost:9090/public/js/',
-    path: path.join(__dirname, '/app/public/js/'),
+    publicPath: '//localhost:9090/public/',
+    path: path.join(__dirname, '/app/public/'),
     filename: '[name].js'
   },
 
