@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /**
  * Webpack configuration file for production.
@@ -9,9 +10,9 @@ module.exports = {
     app: './web_modules/app'
   },
   output: {
-    publicPath: '/public/',
-    path: path.join(__dirname, '/app/public/'),
-    filename: '[name].js'
+    publicPath: '/',
+    path: path.join(__dirname, '/dist'),
+    filename: '[name].[hash].js'
   },
   module: {
     loaders: [
@@ -29,6 +30,7 @@ module.exports = {
       compress: {
         warnings: false
       }
-    })
+    }),
+    new HtmlWebpackPlugin()
   ],
 };

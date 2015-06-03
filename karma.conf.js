@@ -8,8 +8,8 @@ module.exports = function(config) {
      * because it uses an older version of JavaScript.
      */
     files: [
-      './bin/utils/polyfill.js', // PhantomJS polyfill
-      './bin/tests/main.js' // Tests for the newsletter app
+      './bin/utils/polyfill.js',
+      './bin/tests/main.js'
     ],
 
     /**

@@ -1,32 +1,19 @@
 {
-  "name": "react-karma-webpack-example",
-  "version": "0.1.0",
-  "description": "",
-  "main": "web_modules/index.js",
+  "version": "0.2.0",
   "scripts": {
-    "clean": "rm -rf build",
-    "prebuild": "npm run clean",
-    "build:js": "./node_modules/.bin/webpack -p --config webpack.production.config.js",
-    "build": "npm run build:js",
+    "build": "make build",
     "start": "node webpack.local.server.js",
     "test": "./node_modules/karma/bin/karma start karma.conf.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pburtchaell/react-karma-webpack-example.git"
-  },
-  "author": "Patrick Burtchaell <patrick@pburtchaell.com> (pburtchaell.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pburtchaell/react-karma-webpack-example/issues"
   },
   "devDependencies": {
     "babel-core": "^4.7.8",
     "babel-loader": "^5.0.0",
+    "html-webpack-plugin": "^1.4.0",
     "karma": "^0.12.31",
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-webpack": "^1.5.0",
+    "mocha": "^2.2.5",
     "react-hot-loader": "^1.2.4",
     "webpack": "^1.7.3",
     "webpack-dev-server": "^1.8.0"

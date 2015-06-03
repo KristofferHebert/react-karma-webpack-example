@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /**
  * This is the Webpack configuration file for local development. It contains
@@ -16,24 +17,24 @@ module.exports = {
 
   entry: {
     app: [
-      'webpack-dev-server/client?//localhost:9090',
+      'webpack-dev-server/client?//localhost:8000',
       'webpack/hot/only-dev-server',
-      './web_modules/index'
+      './web_modules/app'
     ]
   },
 
   // This will not actually create a bundle.js file in ./build. It is used
   // by the dev server for dynamic hot loading.
   output: {
-    publicPath: '//localhost:9090/public/',
-    path: path.join(__dirname, '/app/public/'),
+    publicPath: '//localhost:8000/',
+    path: path.join(__dirname, '/dist'),
     filename: '[name].js'
   },
 
   // Necessary plugins for hot load
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new HtmlWebpackPlugin()
   ],
 
   // Transform source code using Babel and React Hot Loader
@@ -49,7 +50,6 @@ module.exports = {
 
   // Automatically transform files with these extensions
   resolve: {
-    extensions: ['','.js']
+    extensions: ['', '.js']
   }
-
-}
+};
